@@ -1,22 +1,399 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+
+.scrolling {
+  animation: none; 
+  transform: translateY(20px);
+}
+
+
+
 .main {
   display: flex;
+  width: fit-content;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding: 4rem 0;
+  padding: 0;
+  background-color: #fff;
+}
+.haloBanner {
+  height: 200px;
+  width: 100%;
+  /* background: linear-gradient(to right, #FFCD1C, #FFAC1E, #FFC221); */
+
 }
 
+.firstPart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.logo {
+  margin-top: 50px;
+  margin-bottom: 40px;
+  max-width: 300px;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+
+}
 .title {
-  line-height: 1.15;
-  font-size: 4rem;
+  font-size: 2.7rem;
+  font-family: 'Secular One', sans-serif;
+  font-weight: 500;
+  text-align: center;
+  
+}
+.fondConsignes {
+  margin-top: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
 }
 
-.title a {
-  color: #0070f3;
-  text-decoration: none;
+.consignes  {
+  display: flex;
+  flex-direction: row;
+  align-items: center; 
+  justify-content: center; 
+  margin-top: 80px;
+  margin-bottom: 50px;
+  position: relative; 
+  z-index: 2;
 }
 
-.title a:hover, .title a:focus, .title a:active {
-  text-decoration: underline;
+.tuChoisis,
+.tuPayes,
+.tuEsLivré {
+  text-align: center; 
+  font-size: 20px;
+  font-family: 'Secular One', sans-serif;
+  font-weight: 500;
 }
+.check {
+  font-size: 35px;
+  color: black;
+  margin-bottom: 10px;
+}
+.choisir,
+.payer,
+.livrer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 50px;
+  /* background: linear-gradient(#FFCD1C, #FFAC1E, #FFC221); */
+  background: linear-gradient(to bottom right, #FFCD1C, #FFAC1E, #FFC221);
+  padding: 15px 40px;
+  border-radius: 20px; /* Ajoutez un peu de border-radius pour une apparence arrondie */
+  box-shadow: 0 7px 4px rgba(0, 0, 0, 0.2)
+  
+}
+.choisir:hover,
+.payer:hover,
+.livrer:hover {
+  transform: translateY(-5px); /* Faites sauter les div vers le haut de 5 pixels */
+  transition: transform 0.3s ease; /* Ajoutez une transition pour un effet fluide */
+}
+.choisir {
+  border-radius: 60% 35% 55% 40%;
+}
+.payer {
+  border-radius: 60% 50% 55% 60%;
+  padding-left: 50px;
+  padding-right: 50px;
+
+}
+.livrer {
+  border-radius: 35% 60% 40% 55%;
+  padding-top: 19px;
+  padding-right: 40px;
+}
+.banniereLogo {
+  /* max-width: 250px; */
+  margin-left: 5px;
+  margin-right: 5px;
+  animation: defilement 20s linear infinite;
+  width: 100%; /* La largeur de l'élément banniereLogo occupera 100% de la largeur de son conteneur parent */
+  max-width: 100%;
+  height: 200px;
+}
+@keyframes defilementBanniere {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-100% + 250px)); }
+}
+.banniere {
+  overflow: hidden; /* Pour cacher le contenu qui dépasse */
+  /* width: 100%; */
+}
+.ligneBannieres {
+  margin-top: 50px;
+  margin-bottom: 80px;
+  display: flex;
+  width: 100%;
+  animation: defilementBanniere 40s linear infinite;
+}
+.restoCard{
+  position: relative; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 30px;
+  margin-left: 40px;
+margin-right: 40px;
+margin-top: 40px;
+margin-bottom: 40px;
+max-width: 1200px;
+}
+.resto {
+  width: 100%;
+  justify-content: center;
+  /* margin-left: 40px;
+  margin-right: 40px; */
+  border-radius: 30px;
+}
+.acheté1offert {
+  position: absolute;
+  top: 50px; 
+  left: 0; 
+  max-height: 50px;
+  max-width: 35%;
+  z-index: 1; /* Assure que la div est au-dessus de la photo */
+  background-color: #FDBA2C;;
+  font-family:'Lato', sans-serif;
+  text-align: center; 
+  border-radius: 0px 30px 30px 0px;
+  padding: 12px 30px ;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4); /* Ajustez cette valeur négative selon vos besoins */
+}
+
+.texteAcheté1offert {
+  color: #fff;
+  /* font-size: max (80vw); */
+  align-content: center;
+  align-items: center;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  display: inline-block; /* Assurez-vous que la balise <span> occupe uniquement la largeur de son contenu */
+  animation: zoomInAndOut 3s infinite alternate; /* Ajoutez l'animation */
+  }
+  
+  @keyframes zoomInAndOut {
+    0% {
+      transform: scale(1); /* Zoom normal */
+    }
+    50% {
+      transform: scale(1.1); /* Zoom in */
+    }
+    100% {
+      transform: scale(1); /* Retour au zoom normal */
+    }
+  }
+
+.texteContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* align-content: space-between; */
+  /* flex: 1; */
+  width: 100%;
+  margin-top: 10px;
+}
+.leftPart, .centerPart, .rigthPart {
+  flex-grow: 1; /* Partage l'espace disponible de manière égale */
+  margin: 0 10px; /* Ajoute un espace entre les divs enfants */
+}
+.leftPart {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+
+}
+.ligne1gauche {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: -15px;
+}
+.h1 {
+  font-size: 20px;
+  font-family: 'Secular One', sans-serif;
+  /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);  */
+
+}
+.h2 {
+  font-size: 16px;
+  font-weight: 400;
+  margin-left: 10px;
+  font-family: "Lato", sans-serif;
+
+}
+.ligne2gauche {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.h3 {
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 10px;
+font-family: 'Secular One', sans-serif;
+
+}
+.star {
+  color: #FDBA2C;
+}
+.centerPart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@keyframes moveUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px); /* Ajustez cette valeur selon votre préférence */
+  }
+}
+.btnCommander {
+  display: flex;
+  background-color: #FDBA2C;
+  /* max-width: 280px; */
+  border-radius: 10px;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  /* margin-right: 30px; */
+  /* margin-left: 30px; */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4); /* Modifiez les valeurs selon vos préférences */
+  max-height: 45px;
+  /* width: 250px; */
+  transition: background-color 0.3s, color 0.3s;
+  animation: moveUpDown 1s ease infinite; /* Répétez l'animation indéfiniment */
+}
+.textCommander {
+  color: #fff;
+  font-family: 'Secular One', sans-serif;
+  font-weight: 500;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  justify-content: center;
+  text-align: center;
+  font-size: max(16px);
+}
+.btnCommander:hover {
+  background-color: #fff;
+  cursor: pointer; /* Affiche le pointeur au survol */
+}
+.textCommander:hover {
+  color: #FDBA2C;
+}
+.uber3 {
+  width: 85px;
+  height: 45px;
+  /* padding : 4px; */
+  border-radius: 10px;
+  margin-left: 18px;
+  margin-right: 0; 
+}
+.rigthPart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.ligne1droite {
+  text-align: right;
+  margin-bottom: -10px;
+
+}
+.h2Livraison {
+  font-weight: 500;
+  font-size: 15px;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+}
+.bicycle {
+  margin-right: 8px;
+  animation: deplacementBicycle 1.5s linear forwards;
+}
+@keyframes deplacementBicycle {
+  0% { transform: translateX(-50px); } /* Déplacez le vélo hors de la vue vers la gauche */
+  70% { transform: translateX(calc(100% - 120px)); } /* Arrêtez le vélo juste avant le texte "Livraison" */
+}
+.h2bis {
+  font-weight: 700;
+  font-size: 15px;
+  position: relative;
+  font-family: "Lato", sans-serif;
+
+}
+.h2bis::after {
+  content: ""; /* Ajoutez un pseudo-élément pour créer le soulignement */
+  position: absolute;
+  left: 0;
+  bottom: -2px; /* Ajustez la position verticale du soulignement selon vos besoins */
+  width: 100%;
+  height: 1.1px; /* Définissez l'épaisseur du soulignement */
+  /* background-color: #FDBA2C; Couleur du soulignement */
+  background-size: 200% 100%; /* Agrandissez le soulignement pour créer l'effet de progression */
+  background-image: linear-gradient(to right, transparent 50%, black 50%);
+  transition: background-position 0.3s ease; /* Ajoutez une transition pour un effet doux */
+}
+
+.h2bis:hover::after {
+  background-position: -100% 0; /* Déplacez le soulignement de gauche à droite au survol */
+}
+.divInstagram {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: flex-end;
+  text-align: right;
+  align-items: center;
+  cursor: pointer;
+}
+.instagram {
+  width: 40px;
+  height: 40px;
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.instagram:hover {
+  transform: translateY(-5px); /* Déplacez le logo vers le haut de 5px au survol */
+}
+.footer {
+  display: flex;
+  justify-content: space-between; 
+  position: relative;
+  padding-left: 120px;
+  padding-right: 120px;
+  width: 100%;
+  margin-top: 50px;
+  padding-top : 30px;
+  height: 160px;
+  background: linear-gradient(to right, #FFCD1C, #FFAC1E, #FFC221);
+}
+
+.titreFooter, .titreMentionsLegales {
+  font-family: 'Secular One', sans-serif;
+}
+.coordonnées, .realisation {
+  font-family:'Lato', sans-serif;
+}
+.realisation {
+  font-size: 10px;
+  align-content: end;
+}
+.coordonnées {
+  font-size: 14px;
+}
+
